@@ -1,0 +1,10 @@
+== Proposed IAU CRS definition
+
+```xml
+
+<example>
+<name>ABC123</name>
+</example>
+
+```
+
