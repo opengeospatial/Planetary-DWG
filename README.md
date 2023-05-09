@@ -1,6 +1,13 @@
 # About the Planetary DWG
 The Planetary Domain Working Group (DWG) is a community of experts and enthusiasts interested in planetary science, exploration, implementation and observation. Our mission is to foster collaboration and knowledge-sharing among stakeholders in the field and to support the development of standards and best practices for planetary data, models, and tools. Our focus is on the scientific exploration of the Solar System and beyond, including planets, moons, asteroids, and comets.
 
+More information about the Planetary DWG:
+
+- [charter of the Planetary DWG](https://portal.ogc.org/files/?artifact_id=99970)
+- mailing list: *planetary.dwg@lists.ogc.org*
+- subscribe to the mailing list : *https://lists.ogc.org/mailman/listinfo/Planetary.DWG*
+
+
 ## Objectives
 
 - Identify and prioritize key scientific questions and challenges in planetary science
@@ -121,3 +128,7 @@ To achieve these objectives, the Planetary DWG has established several task grou
 4. Workshops and webinars: This group would focus on organizing workshops and webinars to promote knowledge-sharing and collaboration among diverse communities in planetary science and exploration. It would identify relevant topics and speakers, and work on planning and organizing the events.
 
 5. Outreach and education: This group would focus on outreach and education activities to promote the work of the Planetary DWG and raise awareness about the importance of interoperability and data sharing in the field of planetary science and exploration. It would work on developing outreach materials, organizing public events, and engaging with relevant stakeholders in the field.
+
+# Publications relevant in our field
+
+TODO
