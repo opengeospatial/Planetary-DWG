@@ -2,6 +2,8 @@
 
 A GitHub Issue discussing the IAU CRS definitions proposed for registration on 2023-05-16 is at https://github.com/opengeospatial/Planetary-DWG/issues/5
 
+Result: The Motion approving this proposal passed on 2023-06-30 (via e-mail vote).
+
 == IAU:2015:1090
 
 ```
