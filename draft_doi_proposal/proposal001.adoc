@@ -1,0 +1,99 @@
+# Proposal for Modification to the DataCite Metadata Schema
+
+## Introduction
+
+In the realm of scientific research, Digital Object Identifiers (DOIs) serve as a cornerstone of open science, 
+providing a means for researchers to publish the results of their work and high-level products. However, these 
+results are not frequently archived in permanent repositories such as those maintained by the Planetary Data 
+System (PDS) and the European Space Agency (ESA). Researchers frequently need to access information related 
+to celestial bodies, and publications referenced by DOIs are a valuable resource. However, querying and locating 
+data associated with specific celestial bodies, such as Mars, proves to be a challenging task when retrieving metadata 
+linked to DOIs. This proposal aims to address this issue by enhancing the DataCite Metadata Schema (https://schema.datacite.org/) 
+to better support the needs of planetary science research.
+
+## Use Cases
+
+**Case 1**: As a scientist, I want to search for all publications related to a specific celestial body, such as Mars.
+
+**Case 2**: As a scientist, I want to search for all publications related to a specific type of celestial object, 
+for example, asteroids. This is essential for compiling a database of orbital parameters and asteroid composition.
+
+**Case 3**: As a scientist, I want to find Martian data within a specific geopolygon.
+
+## Proposed Modifications
+
+To address the challenges presented in the use cases, we propose the following modifications to the DataCite Metadata Schema:
+
+### 3.1 Addition of Celestial Body Name to DOI Metadata
+
+- The name of the celestial body associated with the research data or publication shall be added to the DOI metadata.
+
+The best practice is to use the official designation of the target as defined by IAU. This parameter is case sensitive 
+(mixing lower/upper cases) and all values must use the standard spelling and case; unusual characters 
+(such as intermediate spaces) are allowed, except quotes and hashes (preferably changed to _). Data providers must be 
+aware that services which do not expose the IAU designations will not return answers to queries using them. Conversely, 
+users must be aware that some data of interest might not be visible if they do not use the recommended IAU nomenclature 
+for planetary bodies. The quaero name resolver2 from IMCCE may help data providers (as well as users) to handle multiple 
+denominations; it is available from the VESPA portal to support queries.
+
+Concerning celestial objects (at fixed position, i.e., stars, galaxies…) the name should be identifiable through Simbad3.
+
+Other best practices are listed below:
+
+- The Exoplanet Encyclopedia provides a nearly complete list of currently known extrasolar planets: http://exoplanet.eu/index.php
+- Meteorite catalogues can be found here: http://www.nhm.ac.uk/research-curation/research/projects/metcat/search/indexsing.dsml and http://www.lpi.usra.edu/meteor/index.php.
+- The catalog of lunar samples is available here: http://www.lpi.usra.edu/lunar/samples/
+- Other planetary samples are listed in topical web sites, e.g., samples from the Stardust mission are described here: http://curator.jsc.nasa.gov/stardust/catalog/
+- Consortia such as the IGSN4 issue IDs for samples
+- Asteroids: Usage is to use preferably name (if it exists) or principal designation (the number is not used here, it can be included in alt_target_name)
+- Meteors: the IAU Meteor Data Center assigns IDs to meteors and meteor showers
+- Calibration targets: values can relate to existing names in a given archive (e.g., the PSA contains values such as bias, checkout, dark, flatfield, internal source…)
+
+
+### 3.2 Addition of Celestial Object Type
+
+- A list of values defining the type of celestial object (e.g., planet, moon, asteroid) shall be incorporated into the metadata 
+schema. This parameter identifies the type of the target. Solar System bodies are defined without ambiguity by the couple 
+celestial object type and object name. In other cases, targets may have no proper name (i.e., samples), but the object type 
+parameter must contain a value in all cases. The possible values for objcet types are:
+- asteroid
+- dwarf_planet
+- planet
+- satellite
+- comet
+- exoplanet
+- interplanetary_medium
+- sample
+- sky
+- spacecraft
+- spacejunk
+- star
+- calibration
+
+### 3.3 Inclusion of Coordinate Reference Systems (CRS) for Geopolygons
+
+- Coordinate Reference Systems associated with geopolygons referenced in the directory found at [https://www.opengis.net/def/crs/IAU](https://www.opengis.net/def/crs/IAU) shall be included in the metadata.
+- This modification ensures that researchers can precisely locate data within geopolygons related to planetary surfaces.
+
+## What Change Would You Like to See in the DataCite Metadata Schema?
+
+We propose extending the DataCite Metadata Schema to include essential information about celestial bodies, 
+celestial object types, and coordinate reference systems for geopolygons. This addition will empower researchers to 
+efficiently locate and utilize planetary science research data associated with DOIs.
+
+## What Problem Would This Change Solve—and For Whom?
+
+This change addresses the problem of inefficiency in searching and accessing planetary science research data referenced by DOIs. 
+It benefits the scientific community by:
+
+- Facilitating streamlined searches for research data related to specific celestial bodies.
+- Enabling the compilation of comprehensive databases for specific types of celestial objects.
+- Enhancing the precision and utility of geospatial data by providing the necessary coordinate reference systems.
+
+## What Workarounds Do You Currently Use (If Any) to Get Around This Problem?
+
+Currently, planetary science researchers rely on inefficient manual methods to find celestial bodies or object types 
+specific to DOIs. These workarounds often result in considerable waste of time and resources.
+
+By implementing the proposed changes, these workarounds will become unnecessary and researchers will be able to directly 
+access the information they need to advance their work in planetary science.
